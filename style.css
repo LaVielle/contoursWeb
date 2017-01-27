@@ -1,0 +1,35 @@
+.container {
+	border-style: solid;
+    border-width: 1px;
+    border-color: #000;
+}
+
+.center-block {
+  
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#title{
+	
+	font-weight: bold;
+}
+
+#main{
+	
+	min-height: 75vh; 
+	height: 75vh;
+	width: 100vh;
+}
+
+#drop_zone{
+	text-align: center;
+	margin-right: auto;
+  	margin-left: auto;
+	height: 75px;
+	width: 300px;
+	border-style: dashed;
+    border-width: 1px;
+    border-color: #000;
+    border-radius: 5px;
+}
