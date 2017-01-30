@@ -9,10 +9,11 @@ canvas = document.getElementById("myCanvas");
 
 ////////////
 
+var blobMap = [];
 
 function FindBlobs(src) {
 
-  console.log("running...")
+  console.log("blobScript.js -running...")
 
   var xSize = src.width,
       ySize = src.height,
@@ -30,7 +31,7 @@ function FindBlobs(src) {
 
 
   // This will hold the indecies of the regions we find
-  var blobMap = [];
+  //var blobMap = [];
   var label = 1;
 
   // The labelTable remembers when blobs of different labels merge
@@ -65,7 +66,7 @@ function FindBlobs(src) {
 
         // We're only looking at the alpha channel in this case but you can
         // use more complicated heuristics
-        isVisible = (srcPixels[pos] > 50);
+        isVisible = (srcPixels[pos] > 70);
         //console.log(srcPixels[pos]);
 
         if( isVisible ){
@@ -96,7 +97,7 @@ function FindBlobs(src) {
             labelTable.push(label);
             label += 1;
 
-            console.log("new blob with label: " + label);
+            //console.log("new blob with label: " + label);
   
           // This point is part of an old blob -- update the labels of the
           // neighboring pixels in the label table so that we know a merge
@@ -113,7 +114,7 @@ function FindBlobs(src) {
 
             blobMap[y][x] = minIndex;
 
-            console.log("added to blob: " + minIndex);
+            //console.log("added to blob: " + minIndex);
           }
 
         // This pixel isn't visible so we won't mark it as special
@@ -221,7 +222,7 @@ function FindBlobs(src) {
   // Return the blob data:
 
 
-  console.log("done")
+  console.log("blobScript.js -done")
   //console.log(blobMap);
   return blobMap;
 
